@@ -13,7 +13,7 @@ namespace UnitTests.Learning.Business
             _notificationSender = notificationSender;
         }
 
-        public void SendNotifications()
+        public virtual void SendNotifications()
         {
             throw new NotImplementedException();
         }
