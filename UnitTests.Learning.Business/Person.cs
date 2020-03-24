@@ -4,6 +4,6 @@
     {
         public int Age { get; set; }
 
-        public int Name { get; set; }
+        public string Name { get; set; }
     }
 }
