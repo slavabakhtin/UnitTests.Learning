@@ -18,10 +18,10 @@ namespace UnitTests.Learning.Business.Tests
             var persons = GetTestPersons();
             dataProviderMock.Setup(x => x.GetPersons()).Returns(persons);
             var notificationSenderMock = mockRepository.Create<NotificationSender>();
-            var service = new NotificationService(dataProviderMock.Object, notificationSenderMock.Object);
+            var notificationService = mockRepository.Create<NotificationService>();
 
             //Act
-            service.SendNotifications();
+            notificationService.Object.SendNotifications();
 
             //Assert
             dataProviderMock.Verify(x => x.GetPersons());
@@ -34,12 +34,11 @@ namespace UnitTests.Learning.Business.Tests
             //Arrange
             var mockRepository = new MockRepository(MockBehavior.Default);
             var dataProviderMock = mockRepository.Create<DataProvider>();
-            dataProviderMock.Setup(x => x.GetPersons()).Returns(GetOneTestPerson());
-            var notificationSenderMock = mockRepository.Create<NotificationSender>();
-            var service = new NotificationService(dataProviderMock.Object, notificationSenderMock.Object);
+            dataProviderMock.Setup(x => x.GetPersons()).Returns(new Person[]{});
+            var notificationService = mockRepository.Create<NotificationService>();
 
             //Assert
-            Assert.ThrowsException<ApplicationException>(() => service.SendNotifications());
+            Assert.ThrowsException<ApplicationException>(() => notificationService.Object.SendNotifications());
         }
 
         private Person[] GetTestPersons()
@@ -50,14 +49,6 @@ namespace UnitTests.Learning.Business.Tests
                 new Person { Name="Diana", Age=20},
                 new Person { Name="Olya", Age=20},
                 new Person { Name="Vika", Age=19}
-            };
-        }
-
-        private Person[] GetOneTestPerson()
-        {
-            return new[]
-            {
-                new Person { Name="Lena", Age=20}
             };
         }
     }
