@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -28,7 +29,6 @@ namespace UnitTests.Learning.Business.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ApplicationException),"Persons consists less than 1 element")]
         public void SendNotifications_PersonsConsistsOfLessThan1Element_ReturnedApplicationException()
         {
             //Arrange
@@ -38,8 +38,8 @@ namespace UnitTests.Learning.Business.Tests
             var notificationSenderMock = mockRepository.Create<NotificationSender>();
             var service = new NotificationService(dataProviderMock.Object, notificationSenderMock.Object);
 
-            //Act
-            service.SendNotifications();
+            //Assert
+            Assert.ThrowsException<ApplicationException>(() => service.SendNotifications());
         }
 
         private Person[] GetTestPersons()
