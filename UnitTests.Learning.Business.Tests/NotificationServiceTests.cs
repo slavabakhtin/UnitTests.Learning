@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -13,6 +11,7 @@ namespace UnitTests.Learning.Business.Tests
         [TestMethod]
         public void SendNotifications_CheckCallingDataProviderNotificationSenderMethods()
         {
+            //Arrange
             var mockRepository = new MockRepository(MockBehavior.Default);
             var dataProviderMock = mockRepository.Create<DataProvider>();
             dataProviderMock.Setup(x => x.GetPersons()).Returns(GetTestPersons());
@@ -20,24 +19,27 @@ namespace UnitTests.Learning.Business.Tests
             var notificationSenderMock = mockRepository.Create<NotificationSender>();
             var service = new NotificationService(dataProviderMock.Object, notificationSenderMock.Object);
 
+            //Act
             service.SendNotifications();
 
+            //Assert
             dataProviderMock.Verify(x => x.GetPersons());
             notificationSenderMock.Verify(x => persons.ForEach(x.SendToPerson), Times.Exactly(persons.Count));
         }
 
         [TestMethod]
-        public void SendNotifications_PersonsConsistLess1Element_ReturnedApplicationException()
+        [ExpectedException(typeof(ApplicationException),"Persons consists less than 1 element")]
+        public void SendNotifications_PersonsConsistsLessThan1Element_ReturnedApplicationException()
         {
+            //Arrange
             var mockRepository = new MockRepository(MockBehavior.Default);
             var dataProviderMock = mockRepository.Create<DataProvider>();
             dataProviderMock.Setup(x => x.GetPersons()).Returns(GetOneTestPerson());
             var notificationSenderMock = mockRepository.Create<NotificationSender>();
             var service = new NotificationService(dataProviderMock.Object, notificationSenderMock.Object);
 
+            //Act
             service.SendNotifications();
-
-            Assert.IsInstanceOfType(service, typeof(ApplicationException));
         }
 
         private Person[] GetTestPersons()

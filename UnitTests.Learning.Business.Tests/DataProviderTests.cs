@@ -10,41 +10,40 @@ namespace UnitTests.Learning.Business.Tests
         [TestMethod]
         public void GetPersons_ShouldReturnPersonsOnlyFrom18To25Years()
         {
+            //Arrange
             var dataProvider = new DataProvider();
+            
+            //Act
             var persons = dataProvider.GetPersons();
-            Assert.AreEqual(true, persons.All(x => x.Age >= 18 && x.Age <= 25));
-        }
 
-        [TestMethod]
-        public void GetPersons_ExistsPersonNotFrom18To25Years_ReturnedFalse()
-        {
-            var dataProvider = new DataProvider();
-            var persons = dataProvider.GetPersons();
-            Assert.AreEqual(false, persons.Any(x => x.Age < 18 || x.Age > 25));
+            //Assert
+            Assert.IsTrue(persons.All(x => x.Age >= 18 && x.Age <= 25));
         }
 
         [TestMethod]
         public void GetPersons_ReturnedNotNullList()
         {
+            //Arrange
             var dataProvider = new DataProvider();
+
+            //Act
             var persons = dataProvider.GetPersons();
+
+            //Assert
             Assert.IsNotNull(persons);
         }
 
         [TestMethod]
-        public void GetPersons_ReturnedMore1Element()
+        public void GetPersons_ReturnedMoreThan1Element()
         {
+            //Arrange
             var dataProvider = new DataProvider();
+            
+            //Act
             var persons = dataProvider.GetPersons();
-            Assert.IsTrue(persons.Length >= 1);
-        }
 
-        [TestMethod]
-        public void GetPersons_ReturnedNotEmptyList()
-        {
-            var dataProvider = new DataProvider();
-            var persons = dataProvider.GetPersons();
-            Assert.IsTrue(persons.Length > 0);
+            //Assert
+            Assert.IsTrue(persons.Length >= 1);
         }
     }
 }
