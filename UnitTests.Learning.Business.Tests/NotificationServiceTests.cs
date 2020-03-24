@@ -29,7 +29,7 @@ namespace UnitTests.Learning.Business.Tests
 
         [TestMethod]
         [ExpectedException(typeof(ApplicationException),"Persons consists less than 1 element")]
-        public void SendNotifications_PersonsConsistsLessThan1Element_ReturnedApplicationException()
+        public void SendNotifications_PersonsConsistsOfLessThan1Element_ReturnedApplicationException()
         {
             //Arrange
             var mockRepository = new MockRepository(MockBehavior.Default);
