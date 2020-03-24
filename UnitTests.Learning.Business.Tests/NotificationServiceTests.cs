@@ -14,8 +14,8 @@ namespace UnitTests.Learning.Business.Tests
             //Arrange
             var mockRepository = new MockRepository(MockBehavior.Default);
             var dataProviderMock = mockRepository.Create<DataProvider>();
-            dataProviderMock.Setup(x => x.GetPersons()).Returns(GetTestPersons());
-            var persons = dataProviderMock.Object.GetPersons().ToList();
+            var persons = GetTestPersons();
+            dataProviderMock.Setup(x => x.GetPersons()).Returns(persons);
             var notificationSenderMock = mockRepository.Create<NotificationSender>();
             var service = new NotificationService(dataProviderMock.Object, notificationSenderMock.Object);
 
@@ -24,7 +24,7 @@ namespace UnitTests.Learning.Business.Tests
 
             //Assert
             dataProviderMock.Verify(x => x.GetPersons());
-            notificationSenderMock.Verify(x => persons.ForEach(x.SendToPerson), Times.Exactly(persons.Count));
+            notificationSenderMock.Verify(x => persons.ToList().ForEach(x.SendToPerson), Times.Exactly(persons.Length));
         }
 
         [TestMethod]
