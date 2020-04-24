@@ -1,29 +1,35 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Topshelf;
 
 namespace Eiip.PushNotifications.Service
 {
-    public class Worker : BackgroundService
+    public class Worker : ServiceControl
     {
-        private readonly ILogger<Worker> _logger;
+        private const string LogFileLocation = @"D:\log.txt";
 
-        public Worker(ILogger<Worker> logger)
+        private void Log(string logMessage)
         {
-            _logger = logger;
+            Directory.CreateDirectory(Path.GetDirectoryName(LogFileLocation));
+            File.AppendAllText(LogFileLocation, DateTime.UtcNow.ToString() + " : " + logMessage + Environment.NewLine);
         }
 
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        public bool Start(HostControl hostControl)
         {
-            while (!stoppingToken.IsCancellationRequested)
-            {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                await Task.Delay(1000, stoppingToken);
-            }
+            Log($"Worker running at: {DateTimeOffset.Now}");
+            return true;
+        }
+
+        public bool Stop(HostControl hostControl)
+        {
+            Log($"Worker stopping at: {DateTimeOffset.Now}");
+            return true;
         }
     }
 }
