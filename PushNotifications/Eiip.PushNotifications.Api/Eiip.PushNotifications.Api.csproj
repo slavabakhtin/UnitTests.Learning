@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <UserSecretsId>0b67f02c-672b-49b7-9af5-a0d2d30d5b8a</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\PushNotifications\.dockerignore" Link=".dockerignore">
+      <DependentUpon>$(DockerDefaultDockerfile)</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\TopCase.OlivaTaxi.Api.Common\TopCase.OlivaTaxi.Api.Common.csproj" />
+    <ProjectReference Include="..\..\Common\TopCase.OlivaTaxi.Common.Enums\TopCase.OlivaTaxi.Common.Enums.csproj" />
+    <ProjectReference Include="..\TopCase.OlivaTaxi.PushNotifications.Database\TopCase.OlivaTaxi.PushNotifications.Database.csproj" />
+  </ItemGroup>
+
+
+</Project>

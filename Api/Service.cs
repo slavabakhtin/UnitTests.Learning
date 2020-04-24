@@ -1,30 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Topshelf;
 
 namespace Example.Api
 {
-    public class Service : BackgroundService
+    public class Service : ServiceControl
     {
-        public readonly ILogger Logger;
+        private const string LogFileLocation = @"D:\TestService\temp.txt";
 
-        public Service(ILoggerFactory loggerFactory)
+        private void Log(string logMessage)
         {
-            Logger = loggerFactory.CreateLogger<Service>();
+            Directory.CreateDirectory(Path.GetDirectoryName(LogFileLocation));
+            File.AppendAllText(LogFileLocation, DateTime.UtcNow.ToString() + " : " + logMessage + Environment.NewLine);
         }
 
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        public bool Start(HostControl hostControl)
         {
-            while (!stoppingToken.IsCancellationRequested)
-            {
-                Logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                await Task.Delay(1000, stoppingToken);
-            }
+            Log($"Worker running at: {DateTimeOffset.Now}");
+            return true;
+        }
+
+        public bool Stop(HostControl hostControl)
+        {
+            Log($"Worker stopping at: {DateTimeOffset.Now}");
+            return true;
         }
     }
 }

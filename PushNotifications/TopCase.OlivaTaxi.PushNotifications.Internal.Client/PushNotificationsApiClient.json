@@ -1,0 +1,1360 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "PushNotifications.Internal",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "/payments/db/migrate": {
+      "get": {
+        "tags": [
+          "Db"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/drivernotifications/carassigned": {
+      "post": {
+        "tags": [
+          "DriverNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "driverId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarAssignedMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarAssignedMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarAssignedMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/drivernotifications/carremoved": {
+      "post": {
+        "tags": [
+          "DriverNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "driverId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarRemovedMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarRemovedMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarRemovedMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/drivernotifications/futuretripcancelled": {
+      "post": {
+        "tags": [
+          "DriverNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "driverId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripCancelledByClientMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripCancelledByClientMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripCancelledByClientMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/drivernotifications/futuretripreminder": {
+      "post": {
+        "tags": [
+          "DriverNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "driverId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripCancelledByClientMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripCancelledByClientMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripCancelledByClientMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/drivernotifications/driverfuturetripstartssoon": {
+      "post": {
+        "tags": [
+          "DriverNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "driverId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripStartsSoonDriverMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripStartsSoonDriverMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripStartsSoonDriverMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/drivernotifications/newhotorder": {
+      "post": {
+        "tags": [
+          "DriverNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "driverId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewHotOrderMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewHotOrderMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewHotOrderMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/drivernotifications/neworder": {
+      "post": {
+        "tags": [
+          "DriverNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "driverId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewOrderMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewOrderMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewOrderMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/drivernotifications/ridecancelledbyclient": {
+      "post": {
+        "tags": [
+          "DriverNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "driverId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RideCancelledByClientMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RideCancelledByClientMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RideCancelledByClientMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/drivernotifications/termsofservicechanged": {
+      "post": {
+        "tags": [
+          "DriverNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "driverId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TermsOfServiceChangedDriverMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TermsOfServiceChangedDriverMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TermsOfServiceChangedDriverMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/drivernotifications/waitcancelledbyclient": {
+      "post": {
+        "tags": [
+          "DriverNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "driverId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WaitCancelledByClientMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WaitCancelledByClientMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WaitCancelledByClientMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/passengernotifications/driverarrived": {
+      "post": {
+        "tags": [
+          "PassengerNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DriverArrivedMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DriverArrivedMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DriverArrivedMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/passengernotifications/driverfound": {
+      "post": {
+        "tags": [
+          "PassengerNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DriverFoundMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DriverFoundMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DriverFoundMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/passengernotifications/freewaitingfinished": {
+      "post": {
+        "tags": [
+          "PassengerNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FreeWaitingFinishedMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FreeWaitingFinishedMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FreeWaitingFinishedMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/passengernotifications/futuretripstartssoon": {
+      "post": {
+        "tags": [
+          "PassengerNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripStartsSoonPassengerMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripStartsSoonPassengerMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripStartsSoonPassengerMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/passengernotifications/termsofservicechanged": {
+      "post": {
+        "tags": [
+          "PassengerNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TermsOfServiceChangedPassengerMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TermsOfServiceChangedPassengerMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TermsOfServiceChangedPassengerMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/passengernotifications/repeatsearch": {
+      "post": {
+        "tags": [
+          "PassengerNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RepeatSearchMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RepeatSearchMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RepeatSearchMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/passengernotifications/trippaused": {
+      "post": {
+        "tags": [
+          "PassengerNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TripPausedMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TripPausedMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TripPausedMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/passengernotifications/tripstarted": {
+      "post": {
+        "tags": [
+          "PassengerNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TripStartedMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TripStartedMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TripStartedMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/passengernotifications/futuretripstarted": {
+      "post": {
+        "tags": [
+          "PassengerNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripStartedMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripStartedMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripStartedMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/passengernotifications/waitcanceled": {
+      "post": {
+        "tags": [
+          "PassengerNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WaitCancelMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WaitCancelMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WaitCancelMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/passengernotifications/ridecanceled": {
+      "post": {
+        "tags": [
+          "PassengerNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RideCancelMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RideCancelMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RideCancelMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/passengernotifications/futuredriverfound": {
+      "post": {
+        "tags": [
+          "PassengerNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureDriverFoundMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureDriverFoundMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureDriverFoundMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/passengernotifications/tripfinished": {
+      "post": {
+        "tags": [
+          "PassengerNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TripFinishedMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TripFinishedMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TripFinishedMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/pushnotifications/passengernotifications/passengerfuturetripstartssoon": {
+      "post": {
+        "tags": [
+          "PassengerNotifications"
+        ],
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripStartsSoonPassengerMessageDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripStartsSoonPassengerMessageDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutureTripStartsSoonPassengerMessageDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CarAssignedMessageDetails": {
+        "type": "object",
+        "properties": {
+          "carColor": {
+            "type": "string",
+            "nullable": true
+          },
+          "carBrand": {
+            "type": "string",
+            "nullable": true
+          },
+          "carModel": {
+            "type": "string",
+            "nullable": true
+          },
+          "carNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CarRemovedMessageDetails": {
+        "type": "object",
+        "properties": {
+          "taxiParkContacts": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FutureTripCancelledByClientMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FutureTripStartsSoonDriverMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clientAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "minToStart": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "NewHotOrderMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "NewOrderMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RideCancelledByClientMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TermsOfServiceChangedDriverMessageDetails": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "WaitCancelledByClientMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CarInfo": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string",
+            "nullable": true
+          },
+          "brand": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "number": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DriverArrivedMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "carInfo": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CarInfo"
+              }
+            ],
+            "nullable": true
+          },
+          "freeWaitingMin": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DriverFoundMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "carInfo": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CarInfo"
+              }
+            ],
+            "nullable": true
+          },
+          "waitingMin": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FreeWaitingFinishedMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FutureTripStartsSoonPassengerMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minToStart": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TermsOfServiceChangedPassengerMessageDetails": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "RepeatSearchMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TripPausedMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TripStartedMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FutureTripStartedMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "carInfo": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CarInfo"
+              }
+            ],
+            "nullable": true
+          },
+          "freeWaitingMin": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WaitCancelMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RideCancelMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FutureDriverFoundMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TripFinishedMessageDetails": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "JWT Authorization header using the Bearer scheme.",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": []
+    }
+  ]
+}

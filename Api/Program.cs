@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using System;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
+using Topshelf;
 
 namespace Example.Api
 {
@@ -9,23 +11,21 @@ namespace Example.Api
     {
         public static void Main(string[] args)
         {
-            Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug()
-                .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
-                .Enrich.FromLogContext()
-                .WriteTo.File(@"D:\TestService\temp.txt")
-                .CreateLogger();
-            CreateHostBuilder(args).Build().Run();
+            HostFactory.Run(x =>
+            {
+                x.Service<Service>();
+                x.EnableServiceRecovery(r => r.RestartService(TimeSpan.FromSeconds(10).Seconds));
+                x.SetServiceName("TestService");
+                x.StartAutomatically();
+                CreateHostBuilder(args).Build();
+            });
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .UseWindowsService()
-                .ConfigureServices((hostContext, services) => { services.AddHostedService<Service>(); })
+            Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                })
-                .UseSerilog();
+                });
     }
 }
