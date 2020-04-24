@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using TopCase.OlivaTaxi.Api.Common;
-using TopCase.OlivaTaxi.Api.Common.Extensions;
+﻿using Eiip.Api.Common;
+using Eiip.Api.Common.Extensions;
+using Eiip.PushNotifications.Database;
+using Microsoft.AspNetCore.Hosting;
 using TopCase.OlivaTaxi.PushNotifications.Database;
 
 namespace Eiip.PushNotifications.Api
@@ -13,7 +14,7 @@ namespace Eiip.PushNotifications.Api
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            OlivaTaxiWebHost.CreateDefaultBuilder(args)
+            EiipWebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
     }
 }

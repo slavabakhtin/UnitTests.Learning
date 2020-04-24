@@ -1,13 +1,12 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
+using Eiip.PushNotifications.Database;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TopCase.OlivaTaxi.PushNotifications.Database;
 
 namespace Eiip.PushNotifications.Service.Controllers
 {
-    [Microsoft.AspNetCore.Mvc.Route("payments/[controller]")]
+    [Microsoft.AspNetCore.Mvc.Route("pushnotifications")]
     [Produces("application/json")]
     public class DbController : ControllerBase
     {

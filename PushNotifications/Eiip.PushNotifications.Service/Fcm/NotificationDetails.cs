@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using Eiip.Common.Extensions;
 using FirebaseAdmin.Messaging;
-using TopCase.OlivaTaxi.Common.Extensions;
 
 namespace Eiip.PushNotifications.Service.Fcm
 {

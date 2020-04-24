@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Eiip.Common.Extensions;
+using Eiip.PushNotifications.Database.Models;
 using FirebaseAdmin.Messaging;
 using Microsoft.Extensions.Logging;
-using TopCase.OlivaTaxi.Common.Extensions;
-using TopCase.OlivaTaxi.PushNotifications.Database.Models;
 
 namespace Eiip.PushNotifications.Service.Fcm
 {

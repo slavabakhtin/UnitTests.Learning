@@ -1,14 +1,13 @@
-﻿using Eiip.PushNotifications.Service.Fcm;
-using Eiip.PushNotifications.Service.Fcm.Driver;
-using Eiip.PushNotifications.Service.Fcm.Passenger;
+﻿using Eiip.Api.Common;
+using Eiip.Api.Common.Extensions;
+using Eiip.PushNotifications.Database;
+using Eiip.PushNotifications.Service.Fcm;
 using FirebaseAdmin;
 using FirebaseAdmin.Messaging;
 using Google.Apis.Auth.OAuth2;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TopCase.OlivaTaxi.Api.Common;
-using TopCase.OlivaTaxi.Api.Common.Extensions;
 using TopCase.OlivaTaxi.PushNotifications.Database;
 
 namespace Eiip.PushNotifications.Service
@@ -30,11 +29,10 @@ namespace Eiip.PushNotifications.Service
                 Credential = GoogleCredential.GetApplicationDefault()
             });
 
-            services.AddOlivaTaxiContext<PushNotificationsDbContext>(Configuration);
+            services.AddContext<PushNotificationsDbContext>(Configuration);
             services.AddScoped<PushNotificationSender>();
             services.AddSingleton(FirebaseMessaging.DefaultInstance);
-            services.AddScoped<DriverFcmTokenProvider>();
-            services.AddScoped<PassengerFcmTokenProvider>();
+            services.AddScoped<FcmTokenProvider>();
             services.AddSingleton<MulticastMessageFactory>();
         }
     }

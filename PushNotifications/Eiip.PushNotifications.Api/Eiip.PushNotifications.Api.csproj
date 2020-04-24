@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -18,9 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\TopCase.OlivaTaxi.Api.Common\TopCase.OlivaTaxi.Api.Common.csproj" />
-    <ProjectReference Include="..\..\Common\TopCase.OlivaTaxi.Common.Enums\TopCase.OlivaTaxi.Common.Enums.csproj" />
-    <ProjectReference Include="..\TopCase.OlivaTaxi.PushNotifications.Database\TopCase.OlivaTaxi.PushNotifications.Database.csproj" />
+    <ProjectReference Include="..\..\Common\Eiip.Api.Common\Eiip.Api.Common.csproj" />
+    <ProjectReference Include="..\..\Common\Eiip.Common.Enums\Eiip.Common.Enums.csproj" />
+    <ProjectReference Include="..\Eiip.PushNotifications.Database\Eiip.PushNotifications.Database.csproj" />
   </ItemGroup>
 
 

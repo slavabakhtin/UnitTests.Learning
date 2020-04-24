@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Eiip.Api.Common;
+using Eiip.Api.Common.Extensions;
+using Eiip.PushNotifications.Database;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TopCase.OlivaTaxi.Api.Common;
-using TopCase.OlivaTaxi.Api.Common.Extensions;
 using TopCase.OlivaTaxi.PushNotifications.Database;
 
 namespace Eiip.PushNotifications.Api
@@ -18,7 +19,7 @@ namespace Eiip.PushNotifications.Api
         {
             base.ConfigureServices(services);
 
-            services.AddOlivaTaxiContext<PushNotificationsDbContext>(Configuration);
+            services.AddContext<PushNotificationsDbContext>(Configuration);
         }
     }
 }

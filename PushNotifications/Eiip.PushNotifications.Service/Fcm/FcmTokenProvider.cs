@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using TopCase.OlivaTaxi.PushNotifications.Database;
-using TopCase.OlivaTaxi.PushNotifications.Database.Models;
+using Eiip.PushNotifications.Database;
+using Eiip.PushNotifications.Database.Models;
 
 namespace Eiip.PushNotifications.Service.Fcm
 {
