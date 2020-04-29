@@ -36,17 +36,6 @@ namespace Eiip.Api.Common.Extensions
             services.AddControllers();
 
             services.AddHttpContextAccessor();
-            services.AddEiipLogging(configuration);
-
-            return services;
-        }
-
-        public static IServiceCollection AddEiipLogging(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddLogging(loggingBuilder =>
-            {
-                loggingBuilder.AddConfiguration(configuration.GetSection("Logging"));
-            });
 
             return services;
         }
