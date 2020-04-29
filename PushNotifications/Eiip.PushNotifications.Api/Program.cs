@@ -22,8 +22,7 @@ namespace Eiip.PushNotifications.Api
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>(); 
-
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }
