@@ -17,12 +17,12 @@ namespace Eiip.Api.Common
             _context = context;
         }
 
-        public async Task Migrate(CancellationToken stoppingToken)
+        public async Task Migrate(CancellationToken cancellationToken)
         {
             _logger.LogInformation("Executing db migration...");
             try
             {
-                await _context.Database.MigrateAsync(cancellationToken: stoppingToken);
+                await _context.Database.MigrateAsync(cancellationToken: cancellationToken);
                 _logger.LogInformation("Db migration successfully executed");
             }
             catch (Exception ex)
