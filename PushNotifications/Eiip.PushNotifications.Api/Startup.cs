@@ -16,7 +16,8 @@ namespace Eiip.PushNotifications.Api
 
         public override void ConfigureServices(IServiceCollection services)
         {
-            base.ConfigureServices(services); 
+            base.ConfigureServices(services);
+            services.AddScoped<DbMigrator<PushNotificationsDbContext>>();
             services.AddEiipContext<PushNotificationsDbContext>(Configuration);
         }
     }

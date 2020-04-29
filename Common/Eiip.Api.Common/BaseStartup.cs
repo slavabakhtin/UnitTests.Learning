@@ -37,7 +37,6 @@ namespace Eiip.Api.Common
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapHealthChecks("/");
                 endpoints.MapControllers();
             });
         }

@@ -1,8 +1,8 @@
 ﻿using Eiip.Api.Common;
 using Eiip.PushNotifications.Database;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace Eiip.PushNotifications.Api
 {
@@ -13,16 +13,12 @@ namespace Eiip.PushNotifications.Api
             CreateWebHostBuilder(args).Build().Run();
         }
 
-        public static IHostBuilder CreateWebHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
-                    services.AddScoped<DbMigrator<PushNotificationsDbContext>>();
-                    services.AddHostedService<MigrateWorker>();
+                    services.AddHostedService<MigrateDbWorker<PushNotificationsDbContext>>();
                 })
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+                .UseStartup<Startup>();
     }
 }

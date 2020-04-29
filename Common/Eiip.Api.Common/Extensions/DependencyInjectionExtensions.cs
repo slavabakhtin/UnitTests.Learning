@@ -34,7 +34,6 @@ namespace Eiip.Api.Common.Extensions
 
             services.AddAutoMapper(x => {}, AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllers();
-            services.AddHealthChecks();
 
             services.AddHttpContextAccessor();
             services.AddEiipLogging(configuration);
