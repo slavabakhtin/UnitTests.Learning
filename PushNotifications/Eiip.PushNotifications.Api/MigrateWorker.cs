@@ -25,7 +25,7 @@ namespace Eiip.PushNotifications.Api
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                _provider.CreateScope().ServiceProvider.GetRequiredService<DbMigrator<PushNotificationsDbContext>>().Migrate().Wait(stoppingToken);
+                await _provider.CreateScope().ServiceProvider.GetRequiredService<DbMigrator<PushNotificationsDbContext>>().Migrate(stoppingToken);
                 _logger.LogInformation("MigrateWorker running at: {time}", DateTimeOffset.Now);
                 await Task.Delay(1000, stoppingToken);
             }

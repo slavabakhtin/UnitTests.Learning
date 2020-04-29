@@ -56,7 +56,7 @@ namespace Eiip.Api.Common.Extensions
             where TContext : DbContext
         {
             services.AddScoped(typeof(DbMigrator<TContext>));
-            services.AddDbContext<TContext>(opts => opts.UseNpgsql(configuration.GetConnectionString(typeof(TContext).Name)));
+            services.AddDbContext<TContext>(opts => opts.UseSqlServer(configuration.GetConnectionString(typeof(TContext).Name)));
 
             return services;
         }
