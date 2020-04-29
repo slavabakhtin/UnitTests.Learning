@@ -21,8 +21,8 @@ namespace Eiip.PushNotifications.Api
         protected override async Task ExecuteAsync(CancellationToken cancellationToken)
         {
             using var scope = _provider.CreateScope();
-            await scope.ServiceProvider.GetRequiredService<DbMigrator<T>>()
-                .Migrate(cancellationToken);
+            var dbMigrator = scope.ServiceProvider.GetRequiredService<DbMigrator<T>>();
+            await dbMigrator.Migrate(cancellationToken);
         }
     }
 }
