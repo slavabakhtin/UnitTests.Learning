@@ -1,5 +1,5 @@
-﻿using Eiip.Common.Enums;
-using System;
+﻿using System;
+using Eiip.Api.Common.Enums;
 
 namespace Eiip.PushNotifications.Database.Models
 {

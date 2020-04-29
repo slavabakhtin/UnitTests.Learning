@@ -8,7 +8,6 @@ using Google.Apis.Auth.OAuth2;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TopCase.OlivaTaxi.PushNotifications.Database;
 
 namespace Eiip.PushNotifications.Service
 {
@@ -29,7 +28,7 @@ namespace Eiip.PushNotifications.Service
                 Credential = GoogleCredential.GetApplicationDefault()
             });
 
-            services.AddContext<PushNotificationsDbContext>(Configuration);
+            services.AddEiipContext<PushNotificationsDbContext>(Configuration);
             services.AddScoped<PushNotificationSender>();
             services.AddSingleton(FirebaseMessaging.DefaultInstance);
             services.AddScoped<FcmTokenProvider>();

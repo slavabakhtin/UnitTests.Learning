@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Eiip.Common.Extensions;
+using Eiip.Api.Common.Extensions;
 using Eiip.PushNotifications.Database.Models;
 using FirebaseAdmin.Messaging;
 using Microsoft.Extensions.Logging;

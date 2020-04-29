@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace Eiip.Common.Extensions
+namespace Eiip.Api.Common.Extensions
 {
     public static class JsonExtensions
     {

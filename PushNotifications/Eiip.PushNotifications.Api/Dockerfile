@@ -14,4 +14,4 @@ COPY --from=build-env /app/out .
 EXPOSE 8080
 ENV ASPNETCORE_URLS=http://*:8080
 
-ENTRYPOINT ["dotnet", "TopCase.OlivaTaxi.PushNotifications.Api.dll"]
+ENTRYPOINT ["dotnet", "Eiip.PushNotifications.Api.dll"]

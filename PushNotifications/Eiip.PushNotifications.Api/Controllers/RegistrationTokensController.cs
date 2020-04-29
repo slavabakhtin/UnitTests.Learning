@@ -2,9 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using Eiip.Api.Common;
+using Eiip.Api.Common.Enums;
 using Eiip.Api.Common.Extensions;
-using Eiip.Common.Enums;
 using Eiip.PushNotifications.Database;
 using Eiip.PushNotifications.Database.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -14,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Eiip.PushNotifications.Api.Controllers
 {
-    [Authorize(Roles = Roles.Role)]
+    [Authorize]
     [ApiController]
     [Route("pushnotifications")]
     [Produces("application/json")]

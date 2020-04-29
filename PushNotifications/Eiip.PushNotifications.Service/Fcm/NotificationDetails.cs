@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using Eiip.Common.Extensions;
+using Eiip.Api.Common.Extensions;
 using FirebaseAdmin.Messaging;
 
 namespace Eiip.PushNotifications.Service.Fcm

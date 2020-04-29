@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-using Microsoft.Extensions.Logging;
-using NUnit.Framework.Internal;
+﻿using Microsoft.Extensions.Logging;
 
 namespace LogAnalyzer
 {

@@ -9,6 +9,11 @@
     <NoWarn>1701;1702;1705;1591</NoWarn>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>bin\Debug\netcoreapp3.1\</OutputPath>
+    <DocumentationFile>C:\Users\elena.bokshits\source\repos\UnitTests.Learning\Common\Eiip.Api.Common\Eiip.Api.Common.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="AspNetCore.Firebase.Authentication" Version="2.0.1" />
     <PackageReference Include="AutoMapper" Version="9.0.0" />
@@ -20,11 +25,6 @@
     <PackageReference Include="Microsoft.OpenApi" Version="1.1.4" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.3.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Eiip.Common.Extensions\Eiip.Common.Extensions.csproj" />
-    <ProjectReference Include="..\Eiip.Common.Models\Eiip.Common.Models.csproj" />
   </ItemGroup>
 
 </Project>

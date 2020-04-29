@@ -1,4 +1,4 @@
-﻿namespace Eiip.Common.Enums
+﻿namespace Eiip.Api.Common.Enums
 {
     public enum MobilePlatform
     {

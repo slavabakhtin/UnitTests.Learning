@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Eiip.Api.Common\Eiip.Api.Common.csproj" />
-    <ProjectReference Include="..\..\Common\Eiip.Common.Extensions\Eiip.Common.Extensions.csproj" />
     <ProjectReference Include="..\Eiip.PushNotifications.Database\Eiip.PushNotifications.Database.csproj" />
   </ItemGroup>
 

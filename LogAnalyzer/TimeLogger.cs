@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Text;
-
-namespace LogAnalyzer
+﻿namespace LogAnalyzer
 {
     public static class TimeLogger
     {

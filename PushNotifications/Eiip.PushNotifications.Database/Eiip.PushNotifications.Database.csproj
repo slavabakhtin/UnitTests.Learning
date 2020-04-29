@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\Eiip.Common.Enums\Eiip.Common.Enums.csproj" />
+    <ProjectReference Include="..\..\Common\Eiip.Api.Common\Eiip.Api.Common.csproj" />
   </ItemGroup>
 
 </Project>
